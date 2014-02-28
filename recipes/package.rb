@@ -25,6 +25,7 @@ when 'redhat', 'centos', 'fedora'
   yum_repository 'freeswitch' do
     description "FreeSWITCH repo"
     baseurl node['freeswitch']['package']['repo']['url']
+    enabled true
     only_if { node['freeswitch']['package']['repo']['enable'] }
   end
 
