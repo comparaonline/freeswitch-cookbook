@@ -23,9 +23,8 @@ when 'ubuntu', 'debian'
   end
 when 'redhat', 'centos', 'fedora'
   yum_repository 'freeswitch' do
-    repo_name 'freeswitch'
     description "FreeSWITCH repo"
-    url node['freeswitch']['package']['repo']['url']
+    baseurl node['freeswitch']['package']['repo']['url']
     only_if { node['freeswitch']['package']['repo']['enable'] }
   end
 
